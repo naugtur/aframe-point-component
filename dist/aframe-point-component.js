@@ -90,7 +90,7 @@
 	    // Create mesh.
 	    this.points = new THREE.Points(this.geometry, this.material)
 	    // Set mesh on entity.
-	    this.el.setObject3D('points', this.points)
+	    this.el.setObject3D('mesh', this.points)
 	  },
 
 	  /**
@@ -98,7 +98,7 @@
 	   * Generally undoes all modifications to the entity.
 	   */
 	  remove: function () {
-	    this.el.removeObject3D('points')
+	    this.el.removeObject3D('mesh')
 	  }
 
 	})
