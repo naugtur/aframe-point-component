@@ -4,6 +4,11 @@ A point component for [A-Frame](https://aframe.io).
 
 Creates a THREE.Points object
 
+Demo: http://naugtur.pl/aframe-point-component/
+
+![screenshot](screenshot.png)
+Yes, it's just a point. But it can remain a point no matter the distance (the 3 smallest points above are in very different distances)
+
 ### API
 
 | Property | Description | Default Value |
