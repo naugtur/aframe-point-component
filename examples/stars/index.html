@@ -1,8 +1,8 @@
 <html>
 
 <head>
-  <title>A-Frame Point Component - Star map</title>
-  <meta name="description" content="Using Point component for rendering very many points."></meta>
+    <title>A-Frame Point Component - Star map</title>
+    <meta name="description" content="Using Point component for rendering very many points."></meta>
     <script src="../build.js"></script>
     <script src="./hygdata.js"></script>
 
@@ -15,13 +15,17 @@
         <a-point position="0 0 0" color="#fff" size="0.1" perspective="true"></a-point>
         <a-sky color="#000"></a-sky>
         <a-entity class="camwrap" position="0 0 0" rotation="90 180 180">
-            <a-camera near="1" user-height="0" fov="60"></a-camera>
+            <a-camera look-controls wasd-controls="fly:true acceleration:1" near="1" position="0 0 20" user-height="0" fov="60"></a-camera>
         </a-entity>
     </a-scene>
     <script>
         const mul = x => 0.07 * x
 
         const points = document.querySelector("a-point")
+        const cam = document.querySelector("a-camera")
+        setTimeout(function() {
+            cam.components["wasd-controls"].keys["KeyW"] = true;
+        }, 5000)
         setTimeout(function() {
             points.components.point.setPoints(
                 hygdata
