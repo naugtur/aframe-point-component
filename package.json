@@ -1,6 +1,6 @@
 {
   "name": "aframe-point-component",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A Point component for A-Frame.",
   "main": "index.js",
   "cdn": "dist/aframe-point-component.min.js",
