@@ -1,7 +1,7 @@
 /* global AFRAME THREE */
 
 if (typeof AFRAME === 'undefined') {
-  throw new Error('Component attempted to register before AFRAME was available.')
+  throw new Error('Component attempted to register before AFRAME was available.');
 }
 
 /**
@@ -33,18 +33,18 @@ AFRAME.registerComponent('point', {
    */
   init: function () {
     // Create geometry.
-    this.geometry = new THREE.Geometry()
-    this.geometry.vertices.push(new THREE.Vector3(0, 0, 0))
+    this.geometry = new THREE.Geometry();
+    this.geometry.vertices.push(new THREE.Vector3(0, 0, 0));
     // Create material.
     this.material = new THREE.PointsMaterial({
       color: this.data.color,
       size: this.data.size,
       sizeAttenuation: this.data.perspective
-    })
+    });
     // Create mesh.
-    this.points = new THREE.Points(this.geometry, this.material)
+    this.points = new THREE.Points(this.geometry, this.material);
     // Set mesh on entity.
-    this.el.setObject3D('mesh', this.points)
+    this.el.setObject3D('mesh', this.points);
   },
 
   /**
@@ -52,10 +52,10 @@ AFRAME.registerComponent('point', {
    * Generally undoes all modifications to the entity.
    */
   remove: function () {
-    this.el.removeObject3D('mesh')
+    this.el.removeObject3D('mesh');
   }
 
-})
+});
 
 AFRAME.registerPrimitive('a-point', {
   defaultComponents: {
@@ -66,4 +66,4 @@ AFRAME.registerPrimitive('a-point', {
     size: 'point.size',
     perspective: 'point.perspective'
   }
-})
+});
