@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <title>A-Frame Point Component - Star map</title>
+  <meta name="description" content="Using Point component for rendering very many points."></meta>
+    <script src="../build.js"></script>
+    <script src="./hygdata.js"></script>
+
+</head>
+
+<body>
+    <a-scene>
+        <a-entity light="type: ambient; color: #fff"></a-entity>
+        <a-sphere position="0 0 0" perspective="true" radius="0.2" color="#69d" id="earth-too-big"></a-sphere>
+        <a-point position="0 0 0" color="#fff" size="0.1" perspective="true"></a-point>
+        <a-sky color="#000"></a-sky>
+        <a-entity class="camwrap" position="0 0 0" rotation="90 180 180">
+            <a-camera near="1" user-height="0" fov="60"></a-camera>
+        </a-entity>
+    </a-scene>
+    <script>
+        const mul = x => 0.07 * x
+
+        const points = document.querySelector("a-point")
+        setTimeout(function() {
+            points.components.point.setPoints(
+                hygdata
+                .map(star => [mul(star.x), mul(star.y), mul(star.z)]))
+        }, 1000)
+    </script>
+</body>
+
+</html>
