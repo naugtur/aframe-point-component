@@ -47,7 +47,7 @@
 	/* global AFRAME THREE */
 
 	if (typeof AFRAME === 'undefined') {
-	  throw new Error('Component attempted to register before AFRAME was available.')
+	  throw new Error('Component attempted to register before AFRAME was available.');
 	}
 
 	/**
@@ -79,18 +79,30 @@
 	   */
 	  init: function () {
 	    // Create geometry.
-	    this.geometry = new THREE.Geometry()
-	    this.geometry.vertices.push(new THREE.Vector3(0, 0, 0))
+	    this.geometry = new THREE.Geometry();
+	    this.geometry.vertices.push(new THREE.Vector3(0, 0, 0));
 	    // Create material.
 	    this.material = new THREE.PointsMaterial({
 	      color: this.data.color,
 	      size: this.data.size,
 	      sizeAttenuation: this.data.perspective
-	    })
+	    });
 	    // Create mesh.
-	    this.points = new THREE.Points(this.geometry, this.material)
+	    this.points = new THREE.Points(this.geometry, this.material);
 	    // Set mesh on entity.
-	    this.el.setObject3D('mesh', this.points)
+	    this.el.setObject3D('mesh', this.points);
+	  },
+
+	  setPoints: function (points) {
+	    this.geometry = new THREE.Geometry();
+	    var vertices = this.geometry.vertices;
+	    points.forEach(function (point) {
+	      vertices.push(new THREE.Vector3(point[0], point[1], point[2]));
+	    });
+	    // Create mesh.
+	    this.points = new THREE.Points(this.geometry, this.material);
+	    // Set mesh on entity.
+	    this.el.setObject3D('mesh', this.points);
 	  },
 
 	  /**
@@ -98,10 +110,10 @@
 	   * Generally undoes all modifications to the entity.
 	   */
 	  remove: function () {
-	    this.el.removeObject3D('mesh')
+	    this.el.removeObject3D('mesh');
 	  }
 
-	})
+	});
 
 	AFRAME.registerPrimitive('a-point', {
 	  defaultComponents: {
@@ -112,7 +124,7 @@
 	    size: 'point.size',
 	    perspective: 'point.perspective'
 	  }
-	})
+	});
 
 
 /***/ }

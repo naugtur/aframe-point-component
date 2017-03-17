@@ -47,6 +47,18 @@ AFRAME.registerComponent('point', {
     this.el.setObject3D('mesh', this.points);
   },
 
+  setPoints: function (points) {
+    this.geometry = new THREE.Geometry();
+    var vertices = this.geometry.vertices;
+    points.forEach(function (point) {
+      vertices.push(new THREE.Vector3(point[0], point[1], point[2]));
+    });
+    // Create mesh.
+    this.points = new THREE.Points(this.geometry, this.material);
+    // Set mesh on entity.
+    this.el.setObject3D('mesh', this.points);
+  },
+
   /**
    * Called when a component is removed (e.g., via removeAttribute).
    * Generally undoes all modifications to the entity.

@@ -17,6 +17,21 @@ Yes, it's just a point. But it can remain a point no matter the distance (the 3 
 | color| color definition, like in CSS | #888 |
 | perspective | boolean - should it scale with distance or not | false |
 
+#### Custom Methods
+
+`setPoints(array of arrays3)` - replace single point geometry with multiple points in one a-point instance
+
+example
+
+```js
+  element.components.point.setPoints([
+    [0,0,0]
+    [0,0,1]
+    [0,0,2]
+    ...
+  ])
+```
+
 ### Installation
 
 npm install aframe-point
