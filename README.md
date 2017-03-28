@@ -1,21 +1,20 @@
-## Point
+## aframe-point-component
 
-A point component for [A-Frame](https://aframe.io).
+A point component for [A-Frame](https://aframe.io). Creates a [THREE.Points
+object](https://threejs.org/docs/#Reference/Objects/Points). Points remain a
+point no matter the distance.
 
-Creates a THREE.Points object
+![Screenshot](https://cloud.githubusercontent.com/assets/674727/24059359/0ba5a1f8-0b0c-11e7-8cc3-df71ee1d673e.gif)
 
-Demo: http://naugtur.pl/aframe-point-component/
-
-![screenshot](screenshot.png)
-Yes, it's just a point. But it can remain a point no matter the distance (the 3 smallest points above are in very different distances)
+[VIEW DEMO](http://naugtur.pl/aframe-point-component/)
 
 ### API
 
-| Property | Description | Default Value |
-| -------- | ----------- | ------------- |
-| size | size of rendered point (length of rectangle edge) | 1 |
-| color| color definition, like in CSS | #888 |
-| perspective | boolean - should it scale with distance or not | false |
+| Property    | Description                                       | Default Value |
+|-------------|---------------------------------------------------|---------------|
+| size        | size of rendered point (length of rectangle edge) | 1             |
+| color       | color definition, like in CSS                     | #888          |
+| perspective | boolean - should it scale with distance or not    | false         |
 
 #### Custom Methods
 
