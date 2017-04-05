@@ -1,4 +1,4 @@
-# XHR is an OPEN Open Source Project
+# aframe-point-component is an OPEN Open Source Project
 
 -----------------------------------------
 
